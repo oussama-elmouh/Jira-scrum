@@ -1,0 +1,26 @@
+# Dependencies
+node_modules/
+
+# Next.js build
+.next/
+dist/
+
+# Env files
+.env
+.env.*
+!.env.example
+
+# Prisma / SQLite
+*.db
+
+# Logs
+*.log
+
+# IDE
+.vscode/
+
+# TypeScript
+tsconfig.tsbuildinfo
+
+# OS
+.DS_Store
