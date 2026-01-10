@@ -1,43 +1,26 @@
 import type { NextConfig } from 'next'
 
-type ExtendedNextConfig = NextConfig & {
-  eslint?: {
-    ignoreDuringBuilds?: boolean
-  }
-  typescript?: (NextConfig['typescript'] & {
-    ignoreBuildErrors?: boolean
-  })
-}
-
-const nextConfig: ExtendedNextConfig = {
-  // === REACT ===
+const nextConfig: NextConfig = {
   reactStrictMode: true,
 
-  // === ESLINT ===
-  // Next.js le supporte, mais tes types TS ne le voient pas
-  eslint: {
-    ignoreDuringBuilds: true,
-  },
-
-  // === TYPESCRIPT ===
+  // ✅ TYPESCRIPT : on garde seulement ce que Next accepte
   typescript: {
     tsconfigPath: './tsconfig.json',
     ignoreBuildErrors: true,
   },
 
-  // === IMAGES ===
+  // ✅ typedRoutes n'est plus dans experimental
+  typedRoutes: true,
+
   images: {
     formats: ['image/webp', 'image/avif'],
     unoptimized: process.env.NODE_ENV === 'development',
   },
 
-  // === EXPERIMENTAL (Fonctionnalités bêta) ===
   experimental: {
-    typedRoutes: true,
     typedEnv: true,
   },
 
-  // === SÉCURITÉ ===
   async headers() {
     return [
       {
