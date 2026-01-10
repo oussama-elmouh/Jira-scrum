@@ -6,7 +6,9 @@
     "dev": "next dev",
     "build": "next build --webpack",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "prisma:generate": "prisma generate --schema=./prisma/schema.prisma"
+
   },
   "dependencies": {
     "@tanstack/react-query": "^5.90.6",

@@ -30,7 +30,8 @@ jobs:
         run: npm ci
 
       - name: Prisma generate
-        run: npx prisma generate --schema=./prisma/schema.prisma
+        run: npm run prisma:generate
+
 
       - name: Lint (non blocking)
         run: npm run lint || true
