@@ -11,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
 
     env:
-      NODE_ENV: development
+      NODE_ENV: production
       DATABASE_URL: "file:./prisma/dev.db"
       NEXTAUTH_URL: "http://localhost:3000"
       NEXTAUTH_SECRET: "ci-dev-secret"
@@ -36,4 +36,5 @@ jobs:
         run: npm run lint || true
 
       - name: Build
-        run: npm run build
+        run: NEXT_TELEMETRY_DISABLED=1 npm run build
+
