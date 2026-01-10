@@ -11,7 +11,6 @@ jobs:
     runs-on: ubuntu-latest
 
     env:
-      NODE_ENV: production
       DATABASE_URL: "file:./prisma/dev.db"
       NEXTAUTH_URL: "http://localhost:3000"
       NEXTAUTH_SECRET: "ci-dev-secret"
@@ -26,16 +25,14 @@ jobs:
           node-version: 20
           cache: npm
 
-      - name: Install dependencies
+      - name: Install dependencies (incl. devDependencies)
         run: npm ci
 
       - name: Prisma generate
         run: npm run prisma:generate
 
-
       - name: Lint (non blocking)
         run: npm run lint || true
 
       - name: Build
-        run: NEXT_TELEMETRY_DISABLED=1 npm run build
-
+        run: NODE_ENV=production NEXT_TELEMETRY_DISABLED=1 npm run build
