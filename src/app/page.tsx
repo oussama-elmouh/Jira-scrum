@@ -9,7 +9,7 @@ export default function HomePage() {
             📋 TaskManager V1.0 (By Youssef)
           </h1>
           <p className="text-xl text-gray-600 mb-8">
-            Gérez vos tâches facilement et efficacement
+            Gérez vos tâches facilement et efficacement ouin avec TaskManager.
           </p>
 
           <div className="flex gap-4 justify-center">
