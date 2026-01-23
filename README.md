@@ -1,3 +1,5 @@
+[![CI](https://github.com/oussama-elmouh/Jira-scrum/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/oussama-elmouh/Jira-scrum/actions/workflows/ci.yml) || [![.github/workflows/cd-docker.yml](https://github.com/oussama-elmouh/Jira-scrum/actions/workflows/cd-docker.yml/badge.svg?branch=main)](https://github.com/oussama-elmouh/Jira-scrum/actions/workflows/cd-docker.yml)
+
 #  TaskManager - Application de Gestion des Tâches
 
 Une application **fullstack moderne** de gestion de tâches construite avec **Next.js 14**, **Prisma**, et **TypeScript**.
